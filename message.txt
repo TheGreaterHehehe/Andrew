@@ -1,0 +1,440 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local EggName = Instance.new("TextBox")
+local UICorner = Instance.new("UICorner")
+local UICorner_2 = Instance.new("UICorner")
+local Title = Instance.new("TextLabel")
+local UICorner_3 = Instance.new("UICorner")
+local Open = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local Stop = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local FHATCHTITLE = Instance.new("TextLabel")
+local UICorner_6 = Instance.new("UICorner")
+local PetName = Instance.new("TextBox")
+local UICorner_7 = Instance.new("UICorner")
+local PSPAWNTITLE = Instance.new("TextLabel")
+local UICorner_8 = Instance.new("UICorner")
+local SSHINY = Instance.new("TextButton")
+local UICorner_9 = Instance.new("UICorner")
+local SGOLD = Instance.new("TextButton")
+local UICorner_10 = Instance.new("UICorner")
+local hookurl = Instance.new("TextBox")
+local UICorner_11 = Instance.new("UICorner")
+local DHOOKTITLE = Instance.new("TextLabel")
+local UICorner_12 = Instance.new("UICorner")
+local synapsereq = Instance.new("ImageLabel")
+local UICorner_13 = Instance.new("UICorner")
+local EnableHook = Instance.new("TextButton")
+local UICorner_14 = Instance.new("UICorner")
+local Credits = Instance.new("TextLabel")
+local UICorner_15 = Instance.new("UICorner")
+local CopyDisc = Instance.new("TextButton")
+local UICorner_16 = Instance.new("UICorner")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+Frame.Position = UDim2.new(0.342383116, 0, 0.155025542, 0)
+Frame.Size = UDim2.new(0, 195, 0, 485)
+Frame.Active = true
+Frame.Draggable = true
+EggName.Name = "EggName"
+EggName.Parent = Frame
+EggName.BackgroundColor3 = Color3.fromRGB(138, 138, 138)
+EggName.Position = UDim2.new(0, 0, 0.108303249, 0)
+EggName.Size = UDim2.new(0, 195, 0, 50)
+EggName.Font = Enum.Font.Code
+EggName.Text = "Egg Name..."
+EggName.TextColor3 = Color3.fromRGB(0, 0, 0)
+EggName.TextScaled = true
+EggName.TextSize = 14.000
+EggName.TextWrapped = true
+EggName.ClearTextOnFocus = false
+UICorner.Parent = EggName
+
+UICorner_2.Parent = Frame
+
+Title.Name = "Title"
+Title.Parent = Frame
+Title.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+Title.Position = UDim2.new(-0.025641026, 0, -0.175701559, 0)
+Title.Size = UDim2.new(0, 200, 0, 50)
+Title.Font = Enum.Font.Code
+Title.Text = "Cam_guy's system scripts gui"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextScaled = true
+Title.TextSize = 14.000
+Title.TextWrapped = true
+local Run = nil
+UICorner_3.Parent = Title
+
+Open.Name = "Open"
+Open.Parent = Frame
+Open.BackgroundColor3 = Color3.fromRGB(115, 115, 115)
+Open.Position = UDim2.new(0.0102564106, 0, 0.210189879, 0)
+Open.Size = UDim2.new(0, 100, 0, 50)
+Open.Font = Enum.Font.Code
+Open.Text = "Open"
+Open.TextColor3 = Color3.fromRGB(0, 0, 0)
+Open.TextScaled = true
+Open.TextSize = 14.000
+Open.TextWrapped = true
+Open.MouseButton1Down:connect(function()
+	Run = true
+	while wait() do	
+		while Run == true do
+			local Egg = EggName.Text
+			local Type = "Buy3"
+			local Event = game:GetService("ReplicatedStorage").GameClient.Events.RemoteFunction.BuyEgg
+			Event:InvokeServer(Egg, Type)
+		end
+	end
+end)
+UICorner_4.Parent = Open
+
+Stop.Name = "Stop"
+Stop.Parent = Frame
+Stop.BackgroundColor3 = Color3.fromRGB(130, 130, 130)
+Stop.Position = UDim2.new(0.523076952, 0, 0.210189879, 0)
+Stop.Size = UDim2.new(0, 88, 0, 50)
+Stop.Font = Enum.Font.Code
+Stop.Text = "Stop"
+Stop.TextColor3 = Color3.fromRGB(0, 0, 0)
+Stop.TextScaled = true
+Stop.TextSize = 14.000
+Stop.TextWrapped = true
+Stop.MouseButton1Down:connect(function()
+	Run = false
+end)
+UICorner_5.Parent = Stop
+
+FHATCHTITLE.Name = "FHATCHTITLE"
+FHATCHTITLE.Parent = Frame
+FHATCHTITLE.BackgroundColor3 = Color3.fromRGB(85, 85, 85)
+FHATCHTITLE.Position = UDim2.new(0, 0, 0.0266666673, 0)
+FHATCHTITLE.Size = UDim2.new(0, 195, 0, 30)
+FHATCHTITLE.Font = Enum.Font.Code
+FHATCHTITLE.Text = "Fast Hatch"
+FHATCHTITLE.TextColor3 = Color3.fromRGB(0, 0, 0)
+FHATCHTITLE.TextSize = 14.000
+
+UICorner_6.Parent = FHATCHTITLE
+
+PetName.Name = "PetName"
+PetName.Parent = Frame
+PetName.BackgroundColor3 = Color3.fromRGB(129, 129, 129)
+PetName.Position = UDim2.new(-0.0153846154, 0, 0.431751043, 0)
+PetName.Size = UDim2.new(0, 195, 0, 50)
+PetName.Font = Enum.Font.Code
+PetName.Text = "Pet Name..."
+PetName.TextColor3 = Color3.fromRGB(0, 0, 0)
+PetName.TextScaled = true
+PetName.TextSize = 14.000
+PetName.TextWrapped = true
+PetName.ClearTextOnFocus = false
+UICorner_7.Parent = PetName
+
+PSPAWNTITLE.Name = "PSPAWNTITLE"
+PSPAWNTITLE.Parent = Frame
+PSPAWNTITLE.BackgroundColor3 = Color3.fromRGB(85, 85, 85)
+PSPAWNTITLE.Position = UDim2.new(0.0102564106, 0, 0.335673749, 0)
+PSPAWNTITLE.Size = UDim2.new(0, 195, 0, 36)
+PSPAWNTITLE.Font = Enum.Font.Code
+PSPAWNTITLE.Text = "Pet Spawning"
+PSPAWNTITLE.TextColor3 = Color3.fromRGB(0, 0, 0)
+PSPAWNTITLE.TextSize = 14.000
+
+UICorner_8.Parent = PSPAWNTITLE
+
+SSHINY.Name = "SSHINY"
+SSHINY.Parent = Frame
+SSHINY.BackgroundColor3 = Color3.fromRGB(130, 130, 130)
+SSHINY.Position = UDim2.new(0.0102564106, 0, 0.534657776, 0)
+SSHINY.Size = UDim2.new(0, 95, 0, 50)
+SSHINY.Font = Enum.Font.Code
+SSHINY.Text = "Spawn Shiny"
+SSHINY.TextColor3 = Color3.fromRGB(0, 0, 0)
+SSHINY.TextScaled = true
+SSHINY.TextSize = 14.000
+SSHINY.TextWrapped = true
+SSHINY.MouseButton1Down:connect(function()
+	local A_1 = "CraftPet"
+	local A_2 = 
+		{
+			[1] = PetName.Text, 
+			[2] = "Gold", 
+			[3] = 
+			{
+				[1] = 
+				{
+					["PetID"] = "1496372420-367", 
+					["Locked"] = false, 
+					["PetName"] = "Dog"
+				}, 
+				[2] = 
+				{
+					["PetID"] = "1496372420-369", 
+					["Locked"] = false, 
+					["PetName"] = "Dog"
+				}, 
+				[3] = 
+				{
+					["PetID"] = "1496372420-371", 
+					["Locked"] = false, 
+					["PetName"] = "Dog"
+				}, 
+				[4] = 
+				{
+					["PetID"] = "1496372420-372", 
+					["Locked"] = false, 
+					["PetName"] = "Dog"
+				}, 
+				[5] = 
+				{
+					["PetID"] = "1496372420-333", 
+					["Locked"] = false, 
+					["PetName"] = "Dog"
+				}, 
+				[6] = 
+				{
+					["PetID"] = "1496372420-334", 
+					["Locked"] = false, 
+					["PetName"] = "Dog"
+				}, 
+				[7] = 
+				{
+					["PetID"] = "1496372420-337", 
+					["Locked"] = false, 
+					["PetName"] = "Dog"
+				}, 
+				[8] = 
+				{
+					["PetID"] = "1496372420-338", 
+					["Locked"] = false, 
+					["PetName"] = "Dog"
+				}, 
+				[9] = 
+				{
+					["PetID"] = "1496372420-339", 
+					["Locked"] = false, 
+					["PetName"] = "Dog"
+				}, 
+				[10] = 
+				{
+					["PetID"] = "1496372420-342", 
+					["Locked"] = false, 
+					["PetName"] = "Dog"
+				},
+
+			}
+		}
+	local Event = game:GetService("ReplicatedStorage").GameClient.Events.RemoteFunction.HandlePet
+	Event:InvokeServer(A_1, A_2)
+end)
+UICorner_9.Parent = SSHINY
+
+SGOLD.Name = "SGOLD"
+SGOLD.Parent = Frame
+SGOLD.BackgroundColor3 = Color3.fromRGB(115, 115, 115)
+SGOLD.Position = UDim2.new(0.497435898, 0, 0.534657776, 0)
+SGOLD.Size = UDim2.new(0, 100, 0, 50)
+SGOLD.Font = Enum.Font.Code
+SGOLD.Text = "Spawn Gold"
+SGOLD.TextColor3 = Color3.fromRGB(0, 0, 0)
+SGOLD.TextScaled = true
+SGOLD.TextSize = 14.000
+SGOLD.TextWrapped = true
+SGOLD.MouseButton1Down:connect(function()
+	local A_1 = "CraftPet"
+	local A_2 = 
+		{
+			[1] = PetName.Text, 
+			[2] = "Normal", 
+			[3] = 
+			{
+				[1] = 
+				{
+					["PetID"] = "1496372420-367", 
+					["Locked"] = false, 
+					["PetName"] = "Dog"
+				}, 
+				[2] = 
+				{
+					["PetID"] = "1496372420-369", 
+					["Locked"] = false, 
+					["PetName"] = "Dog"
+				}, 
+				[3] = 
+				{
+					["PetID"] = "1496372420-371", 
+					["Locked"] = false, 
+					["PetName"] = "Dog"
+				}, 
+				[4] = 
+				{
+					["PetID"] = "1496372420-372", 
+					["Locked"] = false, 
+					["PetName"] = "Dog"
+				}, 
+				[5] = 
+				{
+					["PetID"] = "1496372420-333", 
+					["Locked"] = false, 
+					["PetName"] = "Dog"
+				}, 
+				[6] = 
+				{
+					["PetID"] = "1496372420-334", 
+					["Locked"] = false, 
+					["PetName"] = "Dog"
+				}, 
+				[7] = 
+				{
+					["PetID"] = "1496372420-337", 
+					["Locked"] = false, 
+					["PetName"] = "Dog"
+				}, 
+				[8] = 
+				{
+					["PetID"] = "1496372420-338", 
+					["Locked"] = false, 
+					["PetName"] = "Dog"
+				}, 
+				[9] = 
+				{
+					["PetID"] = "1496372420-339", 
+					["Locked"] = false, 
+					["PetName"] = "Dog"
+				}, 
+				[10] = 
+				{
+					["PetID"] = "1496372420-342", 
+					["Locked"] = false, 
+					["PetName"] = "Dog"
+				},
+
+			}
+		}
+	local Event = game:GetService("ReplicatedStorage").GameClient.Events.RemoteFunction.HandlePet
+	Event:InvokeServer(A_1, A_2)
+end)
+UICorner_10.Parent = SGOLD
+
+hookurl.Name = "hookurl"
+hookurl.Parent = Frame
+hookurl.BackgroundColor3 = Color3.fromRGB(129, 129, 129)
+hookurl.Position = UDim2.new(0.0102564096, 0, 0.759908974, 0)
+hookurl.Size = UDim2.new(0, 195, 0, 50)
+hookurl.Font = Enum.Font.Code
+hookurl.Text = "Webhook URL..."
+hookurl.TextColor3 = Color3.fromRGB(0, 0, 0)
+hookurl.TextScaled = true
+hookurl.TextSize = 14.000
+hookurl.TextWrapped = true
+hookurl.ClearTextOnFocus = false
+UICorner_11.Parent = hookurl
+
+DHOOKTITLE.Name = "DHOOKTITLE"
+DHOOKTITLE.Parent = Frame
+DHOOKTITLE.BackgroundColor3 = Color3.fromRGB(85, 85, 85)
+DHOOKTITLE.Position = UDim2.new(0, 0, 0.671594799, 0)
+DHOOKTITLE.Size = UDim2.new(0, 195, 0, 36)
+DHOOKTITLE.Font = Enum.Font.Code
+DHOOKTITLE.Text = "Discord Notifier"
+DHOOKTITLE.TextColor3 = Color3.fromRGB(0, 0, 0)
+DHOOKTITLE.TextSize = 14.000
+
+UICorner_12.Parent = DHOOKTITLE
+
+synapsereq.Name = "synapsereq"
+synapsereq.Parent = DHOOKTITLE
+synapsereq.BackgroundColor3 = Color3.fromRGB(120, 120, 120)
+synapsereq.Position = UDim2.new(0, -21, 0, -17)
+synapsereq.Size = UDim2.new(0, 37, 0, 34)
+synapsereq.Image = "http://www.roblox.com/asset/?id=3123961467"
+
+UICorner_13.Parent = synapsereq
+
+EnableHook.Name = "EnableHook"
+EnableHook.Parent = Frame
+EnableHook.BackgroundColor3 = Color3.fromRGB(130, 130, 130)
+EnableHook.Position = UDim2.new(0.256410271, 0, 0.861736298, 0)
+EnableHook.Size = UDim2.new(0, 88, 0, 50)
+EnableHook.Font = Enum.Font.Code
+EnableHook.Text = "Enable"
+EnableHook.TextColor3 = Color3.fromRGB(0, 0, 0)
+EnableHook.TextScaled = true
+EnableHook.TextSize = 14.000
+EnableHook.TextWrapped = true
+EnableHook.MouseButton1Down:connect(function()
+	local PetModule = require(game:GetService("ReplicatedStorage").GameClient.Modules.Utilities.PetStats)
+	local username = game.Players.LocalPlayer.Name
+	local userid = game.Players.LocalPlayer.UserId
+	local icon = "https://www.roblox.com/headshot-thumbnail/image?userId="..userid.."&width=420&height=420&format=png";
+	game:GetService("Players")[username].PlayerGui.MainUI.PetsFrame.Inventory.Frame.ChildAdded:connect(function(Pet)
+		local PetNAME = Pet.Name
+		local PetR = PetModule[PetNAME].Rarity
+		msg = {
+			["embeds"] = {{
+				["color"] = 13708129,
+				["description"] = "Hatched a "..PetR.." '"..PetNAME.."'",
+				["author"] = {
+					["name"] = username,
+					["icon_url"] = icon
+
+				}}
+			}
+		}
+		local response = syn.request(
+			{
+				Url = hookurl.Text,
+				Method = "POST",
+				Headers = {
+					["Content-Type"] = "application/json"
+				},
+				Body = game:GetService("HttpService"):JSONEncode(msg)
+			}
+		)
+	end)
+end)
+UICorner_14.Parent = EnableHook
+
+Credits.Name = "Credits"
+Credits.Parent = Frame
+Credits.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+Credits.Position = UDim2.new(-0.025641026, 0, -0.0767324865, 0)
+Credits.Size = UDim2.new(0, 200, 0, 37)
+Credits.Font = Enum.Font.Code
+Credits.Text = "Made By Hacker-_-"
+Credits.TextColor3 = Color3.fromRGB(255, 255, 255)
+Credits.TextScaled = true
+Credits.TextSize = 14.000
+Credits.TextWrapped = true
+
+UICorner_15.Parent = Credits
+
+CopyDisc.Name = "CopyDisc"
+CopyDisc.Parent = Frame
+CopyDisc.BackgroundColor3 = Color3.fromRGB(130, 130, 130)
+CopyDisc.Position = UDim2.new(0, -57, 0, -86)
+CopyDisc.Size = UDim2.new(0, 52, 0, 50)
+CopyDisc.Font = Enum.Font.SourceSans
+CopyDisc.Text = "Copy Discord Invite"
+CopyDisc.TextColor3 = Color3.fromRGB(0, 0, 0)
+CopyDisc.TextScaled = true
+CopyDisc.TextSize = 14.000
+CopyDisc.TextWrapped = true
+CopyDisc.MouseButton1Down:connect(function()
+	setclipboard("https://discord.gg/tK6e3HbCqD")
+end)
+UICorner_16.Parent = CopyDisc
